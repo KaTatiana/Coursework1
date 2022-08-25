@@ -19,7 +19,7 @@ public class EmployeeBook {
         employees[6] = new Employee("Петр", "Иванович", "Ложкин", 3, 52000);
         employees[7] = new Employee("Петр", "Иванович", "Яковлев", 2, 67000);
         employees[8] = new Employee("Петр", "Иванович", "Леонов", 5, 77000);
-        employees[9] = null; // employees[9] = new Employee("Петр", "Иванович", "Сорокин", 2, 82000);
+        employees[9] = null;
     }
 
     public void employeesFullPrint(){
