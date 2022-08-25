@@ -26,15 +26,21 @@ public class Main {
 
         EmployeeBook employeeBook=new EmployeeBook();
         employeeBook.masEmployeeBook();
-        employeeBook.employeePrint( "oll");
-        employeeBook.masStat();
-        employeeBook.employeePrint( "name");
+        employeeBook.employeesFullPrint();
+        employeeBook.employeesSalary();
+        employeeBook.employeesAverageSalary();
+        employeeBook.employeesMinSalary();
+        employeeBook.employeesMaxSalary();
+        employeeBook.employeesNamePrint();
         employeeBook.indexingSalary(0,2.0);
-        employeeBook.employeePrint(2);
-        employeeBook.masStat(2);
+        employeeBook.employeesPrint(2);
+        employeeBook.employeesSalary(2);
+        employeeBook.employeesAverageSalary(2);
+        employeeBook.employeesMinSalary(2);
+        employeeBook.employeesMaxSalary(2);
         employeeBook.indexingSalary(2,0.5d);
         employeeBook.masMinSalary(60000.0);
         employeeBook.masMaxSalary(60000.0);
-
     }
 }
+

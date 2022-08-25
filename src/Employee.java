@@ -8,12 +8,12 @@
 //        (включая id, который нужно получить из счетчика).
 
 public class Employee {
-    String name;
-    String patronymic;
-    String surname;
-    int department;
-    double salary;
-    static int id;
+    private final String name;
+    private final String patronymic;
+    private final String surname;
+    private int department;
+    private double salary;
+    private int id;
 
     public Employee(String name, String patronymic,  String surname, int department, int salary) {
         this.name = name;
