@@ -56,11 +56,13 @@ public class EmployeeBook {
     }
     public void employeesAverageSalary(){
         double sumCost=0.0;
+        int employeesNumber=0;
         for (Employee employee : employees) {
             if (employee == null) continue;
             sumCost += employee.getSalary();
+            employeesNumber++;
         }
-        System.out.println("Среднее значение зарплат: "+sumCost/10);
+        System.out.println("Среднее значение зарплат: "+sumCost/employeesNumber);
     }
     public void employeesMinSalary(){
         double minSalary=employees[0].getSalary();
@@ -100,13 +102,15 @@ public class EmployeeBook {
     }
     public void employeesAverageSalary(int department){
         double sumCost=0.0;
+        int employeesNumber=0;
         for (Employee employee : employees) {
             if (employee == null) continue;
             if (department == employee.getDepartment()) {
                 sumCost += employee.getSalary();
             }
+            employeesNumber++;
         }
-        System.out.println("Среднее значение зарплат: "+sumCost/10);
+        System.out.println("Среднее значение зарплат: "+sumCost/employeesNumber);
     }
     public void employeesMinSalary(int department){
         double minSalary=employees[0].getSalary();
@@ -144,32 +148,30 @@ public class EmployeeBook {
             if(employee==null) continue;
             if (department == employee.getDepartment()) {
                 employee.setSalary(employee.getSalary() + employee.getSalary() * increasePercent / 100);
+                //заголовок для раздела
                 if(indStrDepartment==0) {System.out.println("Индексация зарплаты для сотрудников отдела " + employee.getDepartment());}
                 System.out.println(employee.getSurname()+" "+employee.getName()+" "+employee.getPatronymic() +" "+ employee.getSalary());
                 indStrDepartment++;
             } else if (department == 0) {
                 employee.setSalary(employee.getSalary()+employee.getSalary() * increasePercent / 100);
+                //заголовок для раздела
                 if(indStrFullEmployee==0) System.out.println("Индексация зарплаты для всех сотрудников");
                 System.out.println(employee.getSurname()+" "+employee.getName()+" "+employee.getPatronymic() +" "+ employee.getSalary());
                 indStrFullEmployee++;
             }
         }
     }
-    public void masMinSalary(double salary) {
+    public void employeesMinSalary(double salary) {
+        System.out.println("Сотрудники с зарплатой ниже " + salary + " :");
         for (int i = 0; i < employees.length; i++){
-            if (employees[i]!=null&&i == 0) {
-                System.out.println("Сотрудники с зарплатой ниже " + salary + " :");
-            }
             if (employees[i]!=null&&employees[i].getSalary() < salary) {
                 System.out.println(employees[i].getSurname() + " " + employees[i].getName() + " " + employees[i].getPatronymic() + " " + employees[i].getSalary());
             }
         }
     }
-    public void masMaxSalary(double salary) {
+    public void employeesMaxSalary(double salary) {
+        System.out.println("Сотрудники с зарплатой выше " + salary + " :");
         for(int i=0; i<employees.length; i++) {
-            if(employees[i]!=null&&i==0) {
-                System.out.println("Сотрудники с зарплатой выше " + salary + " :");
-            }
             if(employees[i]!=null&&employees[i].getSalary()>=salary){
                 System.out.println(employees[i].getSurname() + " " + employees[i].getName() + " " + employees[i].getPatronymic()+" "+employees[i].getSalary());
             }

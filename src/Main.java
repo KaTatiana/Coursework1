@@ -39,8 +39,8 @@ public class Main {
         employeeBook.employeesMinSalary(2);
         employeeBook.employeesMaxSalary(2);
         employeeBook.indexingSalary(2,0.5d);
-        employeeBook.masMinSalary(60000.0);
-        employeeBook.masMaxSalary(60000.0);
+        employeeBook.employeesMinSalary(60000.0);
+        employeeBook.employeesMaxSalary(60000.0);
     }
 }
 

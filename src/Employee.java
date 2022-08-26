@@ -7,12 +7,15 @@
 //        6. По умолчанию все поля должны передавать через конструктор (кроме id) и заполняться в нем
 //        (включая id, который нужно получить из счетчика).
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Employee {
     private final String name;
     private final String patronymic;
     private final String surname;
     private int department;
     private double salary;
+    private static int counter = 0;
     private int id;
 
     public Employee(String name, String patronymic,  String surname, int department, int salary) {
@@ -21,9 +24,9 @@ public class Employee {
         this.surname = surname;
         this.department=department;
         this.salary=salary;
-        id=0;
-        id++;
+        id = counter++;
     }
+
     public String getName() { return name; }
     public String getPatronymic() { return patronymic; }
     public String getSurname() { return surname; }
